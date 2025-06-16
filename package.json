@@ -1,5 +1,5 @@
 {
-  "name": "WebDriverIOAutomationFramework",
+  "name": "webdriverio-automation-framework",
   "type": "module",
   "devDependencies": {
     "@wdio/cli": "^9.15.0",
@@ -10,5 +10,8 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "chai": "^5.2.0"
   }
 }

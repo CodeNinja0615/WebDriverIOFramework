@@ -22,7 +22,9 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.spec.js'
+        // './test/specs/firstTest.spec.js',
+        // './test/specs/ui-controls.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -51,9 +53,9 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'chrome'
+        browserName: 'Chrome', //---Chrome, Firefox, Edge, Safari
+        acceptInsecureCerts: true
     }],
-
     //
     // ===================
     // Test Configurations
