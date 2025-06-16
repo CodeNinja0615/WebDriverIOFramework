@@ -1,6 +1,6 @@
 {
   "name": "WebDriverIOAutomationFramework",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@wdio/cli": "^9.15.0",
     "@wdio/local-runner": "^9.15.0",
