@@ -1,5 +1,5 @@
 export const config = {
-// exports.config = {
+    // exports.config = {
     //
     // ====================
     // Runner Configuration
@@ -32,7 +32,7 @@ export const config = {
         // 'path/to/excluded/files'
     ],
 
-    suites:{
+    suites: {
         functional: [
             './test/specs/functional-test.spec.js'
         ],
@@ -60,8 +60,17 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        browserName: 'Chrome', //---Chrome, Firefox, Edge, Safari
-        acceptInsecureCerts: true
+        browserName: 'chrome',
+        acceptInsecureCerts: true,
+        'goog:chromeOptions': {
+            args: [
+                '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
+                '--incognito',
+                '--disable-gpu',
+                '--no-sandbox',
+                '--window-size=1920,1080'
+            ]
+        }
     }],
     //
     // ===================
@@ -119,7 +128,7 @@ export const config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
