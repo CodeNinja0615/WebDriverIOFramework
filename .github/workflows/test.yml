@@ -6,10 +6,10 @@ on:
   workflow_dispatch:        # ✅ Manual trigger
   pull_request:             # ✅ On PR to `main`
     branches:
-      - main
+      - master
   push:                     # ✅ On push to `main`
     branches:
-      - main
+      - master
 
 jobs:
   test:
