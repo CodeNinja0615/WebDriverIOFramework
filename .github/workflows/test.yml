@@ -7,6 +7,9 @@ on:
   pull_request:             # ✅ On PR to `main`
     branches:
       - main
+  push:                     # ✅ On push to `main`
+    branches:
+      - main
 
 jobs:
   test:

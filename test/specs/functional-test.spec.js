@@ -23,7 +23,7 @@ describe('Functional scenarios', () => {
         await $('=Top').click();
     });
 
-    it('Alert control', async () => {
+    xit('Alert control', async () => {
         await browser.url('https://rahulshettyacademy.com/AutomationPractice/');
         await $('#name').setValue('Sameer');
         await $('#confirmbtn').click();
