@@ -1,3 +1,8 @@
-{
-    "name" : "Sameer"
-}
+[
+    {
+        "name": "Sameer"
+    },
+    {
+        "name": "xyz"
+    }
+]

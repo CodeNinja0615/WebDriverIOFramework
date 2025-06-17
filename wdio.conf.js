@@ -22,14 +22,21 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.spec.js'
+        './test/specs/**/*.spec.js',
         // './test/specs/firstTest.spec.js',
-        // './test/specs/ui-controls.spec.js'
+        // './test/specs/ui-controls.spec.js',
+        // './test/specs/functional-test.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
     ],
+
+    suites:{
+        functional: [
+            './test/specs/functional-test.spec.js'
+        ],
+    },
     //
     // ============
     // Capabilities

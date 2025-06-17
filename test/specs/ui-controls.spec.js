@@ -27,17 +27,8 @@ describe('UI Controls Test Suite', () => {
     });
 
     it('UI Controls 002', async () => {
-        // await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
-        // await browser.maximizeWindow();
-        // await $('#username').setValue('rahulshettyacademy');
-        // const password = $('#password');
-        // await password.setValue('learning');
-        // await $('//input[@value="user"]').click();
-        // await $('#okayBtn').click();
-        // await $('#terms').click();
-        // await $('#signInBtn').click();
-        // const banner = $('//a[text()="ProtoCommerce"]');
-        // await banner.waitForExist({ timeout: 5000 });
+        // can also continue with previous test block (it)
         await expect(browser).toHaveUrl(expect.stringContaining('angularpractice'));
     });
+
 });

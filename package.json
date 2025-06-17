@@ -9,9 +9,11 @@
     "@wdio/visual-service": "^8.0.4"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "wdio": "wdio run ./wdio.conf.js",
+    "functional": "wdio run ./wdio.conf.js --suite functional"
   },
   "dependencies": {
     "chai": "^5.2.0"
   }
+  
 }
