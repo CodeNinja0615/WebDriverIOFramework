@@ -65,7 +65,7 @@ export const config = {
         'goog:chromeOptions': {
             args: [
                 '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
-                '--incognito',
+                // '--incognito',
                 '--disable-gpu',
                 '--no-sandbox',
                 '--window-size=1920,1080'
