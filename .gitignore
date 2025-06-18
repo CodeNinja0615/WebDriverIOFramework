@@ -1,5 +1,5 @@
 node_modules
-screenshot/*.png
+# screenshot/*.png
 
 
 #git rm -r --cached .

@@ -22,7 +22,7 @@ describe('Ecommerce application', () => {
         // await productName[0].$('.card-footer .btn').click(); //--can also do without map
         await $('//a[contains(text(),"Checkout")]').scrollIntoView();
         await $('//a[contains(text(),"Checkout")]').waitForStable({timeout: 5000});
-        await $('//a[contains(text(),"Checkout")]').click();
+        await $('.nav-link.btn.btn-primary').click();
         const individualAmount = $$('//tr //td[4] //strong');
         let total = 0;
         for (let i = 0; i < await individualAmount.length; i++) {
