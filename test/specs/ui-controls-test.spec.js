@@ -11,7 +11,7 @@ describe('UI Controls Test Suite', () => {
         const radio = $$('.checkmark')[1];
         await radio.click();
         await $('.modal-body').waitForStable({ timeout: 5000 });
-        // await $('#okayBtn').waitForStable({timeout: 2000});
+        await $('#okayBtn').waitForStable({timeout: 2000});
         await $('#okayBtn').click();
         console.log(await radio.isSelected());
         const dropdown = $('select.form-control');

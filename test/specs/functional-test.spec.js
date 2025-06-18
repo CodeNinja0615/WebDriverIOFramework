@@ -5,7 +5,7 @@ describe('Functional scenarios', () => {
         await browser.url('https://rahulshettyacademy.com/AutomationPractice/');
         await $('#autocomplete').setValue("Ind");
         const drdo = $('.ui-menu-item');
-        await drdo.waitForDisplayed({ timeout: 3000 });
+        await drdo.waitForDisplayed({ timeout: 5000 });
         const items = $$('.ui-menu-item div');
         for (let i = 0; i < await items.length; i++) {
             if (await items[i].getText() === 'India') {
