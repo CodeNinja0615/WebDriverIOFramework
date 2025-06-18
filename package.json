@@ -10,7 +10,8 @@
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js",
-    "functional": "wdio run ./wdio.conf.js --suite functional"
+    "functional": "wdio run ./wdio.conf.js --suite functional",
+    "end2end": "wdio run ./wdio.conf.js --suite end2end"
   },
   "dependencies": {
     "chai": "^5.2.0"

@@ -23,9 +23,11 @@ export const config = {
     //
     specs: [
         './test/specs/**/*.spec.js',
-        // './test/specs/firstTest.spec.js',
+        // './test/specs/first-test.spec.js',
         // './test/specs/ui-controls.spec.js',
-        // './test/specs/functional-test.spec.js'
+        // './test/specs/functional-test.spec.js',
+        // './test/specs/windows-frames-test.spec.js',
+        // './test/specs/end2end-ecommerce-test.spec.js',
     ],
     // Patterns to exclude.
     exclude: [
@@ -35,6 +37,9 @@ export const config = {
     suites: {
         functional: [
             './test/specs/functional-test.spec.js'
+        ],
+        end2end: [
+            './test/specs/end2end-ecommerce-test.spec.js'
         ],
     },
     //
@@ -65,7 +70,6 @@ export const config = {
         'goog:chromeOptions': {
             args: [
                 '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
-                // '--incognito',
                 '--disable-gpu',
                 '--no-sandbox',
                 '--window-size=1920,1080'
