@@ -20,9 +20,10 @@ describe('Ecommerce application', () => {
         }
         // console.log(productName);
         // await productName[0].$('.card-footer .btn').click(); //--can also do without map
-        await $('//a[contains(text(),"Checkout")]').scrollIntoView();
-        await $('//a[contains(text(),"Checkout")]').waitForClickable({timeout: 5000});
-        await $('.nav-link.btn.btn-primary').click();
+        const checkoutBtn = await $('//a[contains(text(),"Checkout")]');
+        await checkoutBtn.scrollIntoView();
+        await checkoutBtn.waitForClickable({ timeout: 5000 });
+        await checkoutBtn.click();
         const individualAmount = $$('//tr //td[4] //strong');
         let total = 0;
         for (let i = 0; i < await individualAmount.length; i++) {
