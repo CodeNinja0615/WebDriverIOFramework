@@ -22,7 +22,6 @@ describe('Ecommerce application', () => {
         // await productName[0].$('.card-footer .btn').click(); //--can also do without map
         const checkoutBtn = await $('//a[contains(text(),"Checkout")]');
         await checkoutBtn.scrollIntoView();
-        await checkoutBtn.waitForClickable({ timeout: 5000 });
         // await checkoutBtn.click();
         await browser.execute(() => {
             const el = document.querySelector('a.nav-link.btn.btn-primary');
