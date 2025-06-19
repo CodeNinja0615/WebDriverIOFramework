@@ -1,5 +1,5 @@
 import { expect as expectchai } from 'chai';
-import data from './../../dataSet.json'
+import data from '../test-data/dataSet.json'
 
 describe('UI Controls Test Suite', () => {
     it('UI Controls 001', async () => {
@@ -34,7 +34,7 @@ describe('UI Controls Test Suite', () => {
             }
         );
         await expect(browser).toHaveUrl(expect.stringContaining('angularpractice'));
-        console.log(data.name);
+        console.log(data[0].name);
     });
 
     it('UI Controls 002', async () => {

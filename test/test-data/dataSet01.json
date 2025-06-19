@@ -1,0 +1,10 @@
+{
+    "url": "https://rahulshettyacademy.com/loginpagePractise/",
+    "username": "rahulshettyacademy",
+    "password": "learning",
+    "products": [
+        "iphone X",
+        "Nokia Edge"
+    ],
+    "success_msg": "Success! Thank you! Your order will be delivered in next few weeks :-)."
+}

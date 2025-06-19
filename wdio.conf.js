@@ -28,6 +28,7 @@ export const config = {
         // './test/specs/functional-test.spec.js',
         // './test/specs/windows-frames-test.spec.js',
         // './test/specs/end2end-ecommerce-test.spec.js',
+        // './test/specs/end2end-pom-test.spec.js',
     ],
     // Patterns to exclude.
     exclude: [
@@ -35,11 +36,17 @@ export const config = {
     ],
 
     suites: {
+        regression: [
+            './test/specs/**/*.spec.js'
+        ],
         functional: [
             './test/specs/functional-test.spec.js'
         ],
         end2end: [
             './test/specs/end2end-ecommerce-test.spec.js'
+        ],
+        smoke: [
+            './test/specs/end2end-pom-test.spec.js'
         ],
     },
     //
@@ -69,7 +76,7 @@ export const config = {
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
             args: [
-                '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
+                // '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
                 '--disable-gpu',
                 '--no-sandbox',
                 '--window-size=1920,1080'
@@ -131,7 +138,7 @@ export const config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha',
+    framework: 'jasmine',
 
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -150,10 +157,14 @@ export const config = {
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000
-    },
+    // mochaOpts: {
+    //     ui: 'bdd',
+    //     timeout: 60000
+    // },
+    // Options to be passed to Jasmine.
+    jasmineOpts: {
+        defaultTimeoutInterval: 60000
+    }
 
     //
     // =====

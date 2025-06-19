@@ -4,6 +4,17 @@ on:
   schedule:
     - cron: '30 23 * * *'  # 5:00 AM IST = 11:30 PM UTC daily
   workflow_dispatch:        # ✅ Manual trigger
+    inputs:
+      suite:
+        description: 'Choose the test suite to run'
+        required: true
+        default: smoke
+        type: choice
+        options:
+          - regression
+          - smoke
+          - end2end
+          - functional
   pull_request:             # ✅ On PR to `main`
     branches:
       - master
@@ -28,4 +39,4 @@ jobs:
         run: npm ci
 
       - name: Run WDIO Tests
-        run: npx wdio run ./wdio.conf.js
+        run: npx wdio run ./wdio.conf.js --suite ${{ github.event.inputs.suite || 'smoke' }}

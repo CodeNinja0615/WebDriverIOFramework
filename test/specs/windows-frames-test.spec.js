@@ -21,6 +21,6 @@ describe('Windows and Frames Test Suite', () => {
         await browser.pause(5000);
     });
 
-    it('should handle frames', async () => {
+    xit('should handle frames', async () => {
     });
 });
