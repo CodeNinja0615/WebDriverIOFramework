@@ -14,7 +14,7 @@ describe('Ecommerce application', () => {
     it(`should ${Shopping.Menus.page1} be working while adding ${data.products}`, async () => {
         await expect(browser).toHaveUrl(expect.stringContaining('angularpractice'));
         await Shopping.addProductToCart(data.products);
-        await Shopping.$checkout().click();
+        await Shopping.checkout();
         await expect(await Checkout.$checkoutPage().waitForDisplayed())
         .withContext(`Expect ${Checkout.Menus.page2} be opened`).toBe(true);
     });

@@ -12,7 +12,8 @@ export default class Common {
      * 
      * @param {WebdriverIO.Element} $element 
      */
-    async validatedClick($element) {
+    async combinedClick($element) {
+        await $element.scrollIntoView();
         await $element.waitForDisplayed();
         await $element.waitForStable();
         await $element.waitForClickable();

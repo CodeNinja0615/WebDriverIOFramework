@@ -21,6 +21,9 @@ class Shopping extends Common {
             }
         }
     }
+    async checkout(){
+        await this.combinedClick(this.$checkout());
+    }
 
 }
 
