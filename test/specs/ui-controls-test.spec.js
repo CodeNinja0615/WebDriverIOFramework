@@ -11,7 +11,7 @@ describe('UI Controls Test Suite', () => {
         const radio = $$('.checkmark')[1];
         await radio.click();
         await $('.modal-body').waitForStable({ timeout: 5000 });
-        await $('#okayBtn').waitForStable({timeout: 2000});
+        await $('#okayBtn').waitForStable({ timeout: 2000 });
         await $('#okayBtn').click();
         console.log(await radio.isSelected());
         const dropdown = $('select.form-control');
@@ -23,6 +23,13 @@ describe('UI Controls Test Suite', () => {
         await $('#signInBtn').click();
         const banner = $('//a[text()="ProtoCommerce"]');
         await banner.waitForExist({ timeout: 5000 });
+        await browser.waitUntil(
+            async () => (await browser.getUrl()).includes('angularpractice'),
+            {
+                timeout: 10000,
+                timeoutMsg: 'Expected to be on the angularpractice page after login'
+            }
+        );
         await expect(browser).toHaveUrl(expect.stringContaining('angularpractice'));
         console.log(data.name);
     });
