@@ -1,7 +1,7 @@
 import { expect as expectchai } from 'chai'
 
 describe('Ecommerce application', () => {
-    xit('End to End Test', async () => {
+    it('End to End Test', async () => {
         const productsList = ['iphone X', 'Nokia Edge'];
         await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
         await browser.maximizeWindow();
@@ -23,7 +23,11 @@ describe('Ecommerce application', () => {
         const checkoutBtn = await $('//a[contains(text(),"Checkout")]');
         await checkoutBtn.scrollIntoView();
         await checkoutBtn.waitForClickable({ timeout: 5000 });
-        await checkoutBtn.click();
+        // await checkoutBtn.click();
+        await browser.execute(() => {
+            const el = document.querySelector('a.nav-link.btn.btn-primary');
+            if (el) el.click();
+        });
         const individualAmount = $$('//tr //td[4] //strong');
         let total = 0;
         for (let i = 0; i < await individualAmount.length; i++) {

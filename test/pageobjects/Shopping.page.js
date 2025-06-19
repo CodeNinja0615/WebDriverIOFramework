@@ -22,13 +22,12 @@ class Shopping extends Common {
         }
     }
     async checkout() {
-        await this.combinedClick(this.$checkout());
-        // await this.$checkout().waitForStable();
-        // await this.$checkout().scrollIntoView();
-        // await browser.execute(() => {
-        //     const el = document.querySelector('a.nav-link.btn.btn-primary');
-        //     if (el) el.click();
-        // });
+        // await this.combinedClick(this.$checkout());
+        await this.$checkout().scrollIntoView();
+        await browser.execute(() => {
+            const el = document.querySelector('a.nav-link.btn.btn-primary');
+            if (el) el.click();
+        });
     }
 
 }
