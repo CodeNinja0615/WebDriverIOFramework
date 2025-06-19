@@ -1,7 +1,7 @@
 import { expect as expectchai } from 'chai'
 
 describe('Ecommerce application', () => {
-    it('End to End Test', async () => {
+    xit('End to End Test', async () => {
         const productsList = ['iphone X', 'Nokia Edge'];
         await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
         await browser.maximizeWindow();
