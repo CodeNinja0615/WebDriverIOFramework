@@ -1,7 +1,7 @@
 import { expect as expectchai } from 'chai';
 import data from '../test-data/dataSet.json'
 
-describe('UI Controls Test Suite', () => {
+describe('UI Controls Test Suite Sanity', () => {
     it('UI Controls 001', async () => {
         await browser.url("https://rahulshettyacademy.com/loginpagePractise/");
         await browser.maximizeWindow();

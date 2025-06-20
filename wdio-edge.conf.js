@@ -71,31 +71,32 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
+    capabilities: [/*{
+        
         maxInstances: 1,
         browserName: 'chrome',
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
             args: [
-                '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
-                '--disable-gpu',
-                '--no-sandbox',
+                // '--headless',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
+                // '--disable-gpu',
+                // '--no-sandbox',
                 '--window-size=1920,1080'
             ]
         }
-    },
-        /*
+    },*/
         {
             maxInstances: 1,
             acceptInsecureCerts: true,
             browserName: 'msedge',
             'ms:edgeOptions': {
                 args: [
-                    // '--headless',
+                    '--headless=new',
+                    '--window-size=maximizeWindow'
                 ]
             }
         }
-        */
+
     ],
     //
     // ===================
