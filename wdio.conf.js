@@ -105,6 +105,11 @@ export const config = {
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
     //
     // Set specific log levels per logger
     // loggers:
