@@ -86,7 +86,7 @@ export const config = {
         acceptInsecureCerts: true,
         'goog:chromeOptions': {
             args: [
-                // '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
+                '--headless=new',  // Use 'new' for Chrome 109+ (or '--headless' for older versions)
                 '--disable-gpu',
                 '--no-sandbox',
                 '--window-size=1920,1080'
