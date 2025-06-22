@@ -9,6 +9,8 @@
     "@wdio/mocha-framework": "^9.15.0",
     "@wdio/spec-reporter": "^9.15.0",
     "@wdio/visual-service": "^8.0.4",
+    "allure-commandline": "^2.34.0",
+    "allure-single-html-file-js": "^0.0.6",
     "jasmine": "^5.8.0"
   },
   "scripts": {
@@ -16,7 +18,10 @@
     "regression": "wdio run ./wdio.conf.js --suite regression",
     "functional": "wdio run ./wdio.conf.js --suite functional",
     "end2end": "wdio run ./wdio.conf.js --suite end2end",
-    "smoke": "wdio run ./wdio.conf.js --suite smoke"
+    "smoke": "wdio run ./wdio.conf.js --suite smoke",
+    "combineReport": "node ./node_modules/allure-single-html-file-js/combine.js allure-report",
+    "generateReport": "allure generate allure-results --clean",
+    "allureOpen": "allure open"
   },
   "dependencies": {
     "chai": "^5.2.0"
