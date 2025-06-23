@@ -19,6 +19,7 @@
     "functional": "wdio run ./wdio.conf.js --suite functional",
     "end2end": "wdio run ./wdio.conf.js --suite end2end",
     "smoke": "wdio run ./wdio.conf.js --suite smoke",
+    "sanity": "npx wdio run wdio.conf.js --jasmineOpts.grep Sanity",
     "combineReport": "node ./node_modules/allure-single-html-file-js/combine.js allure-report",
     "generateReport": "allure generate allure-results --clean",
     "allureOpen": "allure open"

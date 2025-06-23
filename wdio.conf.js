@@ -8,8 +8,6 @@ const __dirname = path.dirname(__filename);
 
 
 export const config = {
-    // exports.config = {
-    //
     // ====================
     // Runner Configuration
     // ====================

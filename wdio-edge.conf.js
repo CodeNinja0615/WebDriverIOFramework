@@ -1,6 +1,13 @@
+import fs from 'fs';
+import path from 'path';
+import allure from 'allure-commandline';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
 export const config = {
-    // exports.config = {
-    //
     // ====================
     // Runner Configuration
     // ====================
@@ -96,7 +103,6 @@ export const config = {
                 ]
             }
         }
-
     ],
     //
     // ===================
@@ -105,7 +111,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'silent',
     //
     // Set specific log levels per logger
     // loggers:
@@ -153,7 +159,7 @@ export const config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'jasmine',
+    framework: 'mocha',
 
     //
     // The number of times to retry the entire specfile when it fails as a whole
@@ -168,8 +174,13 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+    // reporters: ['spec'],
 
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        // disableWebdriverStepsReporting: false,
+        disableWebdriverScreenshotsReporting: false,
+    }]],
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
@@ -179,7 +190,7 @@ export const config = {
     // Options to be passed to Jasmine.
     jasmineOpts: {
         defaultTimeoutInterval: 60000
-    }
+    },
 
     //
     // =====
@@ -194,8 +205,16 @@ export const config = {
      * @param {object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    // onPrepare: function (config, capabilities) {
-    // },
+    onPrepare: function (config, capabilities) {
+        const resultsDir = path.join(__dirname, 'allure-results');
+
+        if (fs.existsSync(resultsDir)) {
+            fs.rmSync(resultsDir, { recursive: true, force: true });
+            console.log('✅ Cleaned up previous Allure results.');
+        } else {
+            console.log('ℹ️ No previous Allure results to remove.');
+        }
+    },
     /**
      * Gets executed before a worker process is spawned and can be used to initialize specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -275,9 +294,11 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
-
+    afterTest: async function (test, context, { error, result, duration, passed, retries }) {
+        if (error) {
+            await browser.takeScreenshot();
+        }
+    },
 
     /**
      * Hook that gets executed after the suite has ended
@@ -319,8 +340,26 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities, results) {
-    // },
+    onComplete: function (exitCode, config, capabilities, results) {
+        const reportError = new Error('Could not generate Allure report')
+        const generation = allure(['generate', 'allure-results', '--clean'])
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(
+                () => reject(reportError),
+                5000)
+
+            generation.on('exit', function (exitCode) {
+                clearTimeout(generationTimeout)
+
+                if (exitCode !== 0) {
+                    return reject(reportError)
+                }
+
+                console.log('Allure report successfully generated')
+                resolve()
+            })
+        })
+    },
     /**
     * Gets executed when a refresh happens.
     * @param {string} oldSessionId session ID of the old session
