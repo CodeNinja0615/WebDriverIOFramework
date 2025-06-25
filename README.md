@@ -29,6 +29,7 @@
 
 ## 🗂 Project Structure
 
+```bash
 ├── test/
 │ ├── specs/ # Test cases
 │ ├── pageobjects/ # Page Object classes
@@ -39,7 +40,7 @@
 ├── .github/workflows/ # GitHub Actions YAMLs
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## 🚀 Scripts
