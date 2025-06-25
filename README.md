@@ -33,8 +33,7 @@
 ├── test/
 │ ├── specs/ # Test cases
 │ ├── pageobjects/ # Page Object classes
-│ ├── data/ # Test data files
-│ └── utils/ # Utility/helper functions
+│ └── test-data/ # Test data files
 ├── wdio.conf.js # WebDriverIO Configuration (Chrome)
 ├── wdio.edge.conf.js # WebDriverIO Configuration (Edge)
 ├── .github/workflows/ # GitHub Actions YAMLs
