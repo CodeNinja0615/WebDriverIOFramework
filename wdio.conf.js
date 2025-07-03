@@ -55,6 +55,9 @@ export const config = {
         smoke: [
             './test/specs/end2end-pom-test.spec.js'
         ],
+        flow: [
+            './test/specs/handler/handler.spec.js'
+        ],
     },
     //
     // ============

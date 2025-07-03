@@ -8,13 +8,14 @@ on:
       suite:
         description: 'Choose the test suite to run'
         required: true
-        default: smoke
+        default: flow
         type: choice
         options:
           - regression
           - smoke
           - end2end
           - functional
+          - flow
   pull_request:
     branches:
       - master
