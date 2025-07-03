@@ -6,8 +6,7 @@
 [![Jasmine](https://img.shields.io/badge/Jasmine-supported-blue)](https://jasmine.github.io/)
 [![Chai](https://img.shields.io/badge/Chai-BDD%20assertions-orange)](https://www.chaijs.com/)
 [![Allure Report](https://img.shields.io/badge/Allure-Reports-yellowgreen)](https://docs.qameta.io/allure/)
-[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/OWNER/REPO/run-tests.yml)](https://github.com/OWNER/REPO/actions)
-[![License](https://img.shields.io/github/license/OWNER/REPO)](LICENSE)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-%232671E5.svg?logo=githubactions&logoColor=white)
 
 > A robust end-to-end test automation framework using WebDriverIO with support for Mocha, Jasmine, and Chai assertions. Supports Chrome and Edge browsers, integrates Allure reporting, follows the Page Object Model (POM), and supports data-driven testing.
 
@@ -33,6 +32,8 @@
 ├── test/
 │ ├── specs/ # Test cases
 │ ├── pageobjects/ # Page Object classes
+│ ├── handler/ # Execution handler for sequential flow
+│ ├── flows/ # Script for sequential flow Test Cases
 │ └── test-data/ # Test data files
 ├── wdio.conf.js # WebDriverIO Configuration (Chrome)
 ├── wdio.edge.conf.js # WebDriverIO Configuration (Edge)
@@ -52,6 +53,7 @@ Use the following `npm` or `yarn` commands to run specific test suites:
   "functional": "wdio run ./wdio.conf.js --suite functional",
   "end2end": "wdio run ./wdio.conf.js --suite end2end",
   "smoke": "wdio run ./wdio.conf.js --suite smoke",
+  "smoke": "wdio run ./wdio.conf.js --suite flow",
   "sanity": "npx wdio run wdio.conf.js --jasmineOpts.grep Sanity",
   "sanityEdge": "npx wdio run wdio.edge.conf.js --mochaOpts.grep Sanity",
   "generateReport": "allure generate allure-results --clean",
