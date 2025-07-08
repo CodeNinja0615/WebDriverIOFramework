@@ -20,6 +20,7 @@
     "end2end": "wdio run ./wdio.conf.js --suite end2end",
     "smoke": "wdio run ./wdio.conf.js --suite smoke",
     "flow": "wdio run ./wdio.conf.js --suite flow",
+    "flow2": "wdio run ./wdio.conf.js --suite flow2",
     "sanity": "npx wdio run wdio.conf.js --jasmineOpts.grep Sanity",
     "sanityEdge": "npx wdio run wdio-edge.conf.js --mochaOpts.grep Sanity",
     "combineReport": "node ./node_modules/allure-single-html-file-js/combine.js allure-report",

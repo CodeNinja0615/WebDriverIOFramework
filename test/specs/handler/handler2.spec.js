@@ -6,8 +6,6 @@ const testList = [runE2ETest]; // Add more if needed
 describe('Sequential Test Execution Handler', () => {
     for (let i = 0; i < testList.length; i++) {
         const flow = testList[i];
-        it(`Running test flow ${i + 1}`, async () => {
-            await flow(dataSet, i);
-        });
+        flow(dataSet, i);
     }
 });

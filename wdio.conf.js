@@ -58,6 +58,9 @@ export const config = {
         flow: [
             './test/specs/handler/handler.spec.js'
         ],
+        flow2: [
+            './test/specs/handler/handler2.spec.js'
+        ],
     },
     //
     // ============
